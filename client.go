@@ -174,6 +174,11 @@ func main() {
 		os.Exit(0)
 	}
 
+	if len(*msgFlag) == 0 && len(*startFlag) == 0 {
+		fmt.Println("Nothing to add...")
+		os.Exit(1)
+	}
+
 	// parse start time
 	start, err := parseTimeString(*startFlag, carbon.Now())
 	if err != nil {
