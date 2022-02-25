@@ -1,6 +1,7 @@
-package main
+package remme
 
 import (
+	"context"
 	"encoding/json"
 	"errors"
 	"flag"
@@ -39,6 +40,7 @@ func readDb(filepath string, data *[]Reminder) (bool, error) {
 	if err != nil {
 		return false, err
 	}
+	context.Background()
 
 	// TODO: check for empty file, before running Unmarsal
 
